@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good Night</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0e68c; /* Light golden color */
+            font-family: Arial, sans-serif;
+            flex-direction: column;
+        }
+        .message {
+            display: none;
+            font-size: 2em;
+            color: #2e8b57; /* SeaGreen */
+            text-align: center;
+            margin: 0; /* Remove margin between lines */
+        }
+        #clickMeButton, #newClickMeButton {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #4682b4; /* SteelBlue */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        #clickMeButton:hover, #newClickMeButton:hover {
+            background-color: #5f9ea0; /* Darker SteelBlue */
+        }
+        #finalMessage {
+            display: none;
+            font-size: 1.5em;
+            color: #8b0000; /* DarkRed */
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button id="clickMeButton">Click Me HUHUHU❤️</button>
+    <h1 class="message">Hey huhuhu❤️. It's me Mr khaduss..!</h1>
+    <h1 class="message">I want you not to be angry😢</h1>
+    <h1 class="message">as i am poor in fakawnu😭</h1>
+    <h1 class="message">Finally in the end please click the button below</h1>
+    <div id="finalMessage">I love you❤️😘</div>
+
+    <script>
+        document.getElementById('clickMeButton').addEventListener('click', function() {
+            // Show all messages at once
+            const messages = document.querySelectorAll('.message');
+            messages.forEach((message) => {
+                message.style.display = 'block';
+            });
+
+            this.style.display = 'none';
+
+            // Create a new button after the message is displayed
+            let newButton = document.createElement('button');
+            newButton.id = 'newClickMeButton';
+            newButton.textContent = 'Click Me Again😘!';
+            newButton.addEventListener('click', function() {
+                // Display the final message after the new button is clicked
+                document.getElementById('finalMessage').style.display = 'block';
+                this.style.display = 'none'; // Hide the new button after it is clicked
+            });
+
+            document.body.appendChild(newButton);
+        });
+    </script>
+</body>
+</html>
